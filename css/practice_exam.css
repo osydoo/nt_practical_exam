@@ -1,0 +1,29 @@
+.naver_icon {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 96px;
+  height: 94px;
+  display: inline-block; }
+
+.webfiction_icon {
+  background-image: url(../img/sprite.png);
+  background-position: -96px 0px;
+  width: 112px;
+  height: 42px;
+  display: inline-block; }
+
+.horiline_icon {
+  background-image: url(../img/sprite.png);
+  background-position: -198px -42px;
+  width: 2px;
+  height: 28px;
+  display: inline-block; }
+
+.test_wrap {
+  text-align: right; }
+  .test_wrap .test {
+    font-size: 12px;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }

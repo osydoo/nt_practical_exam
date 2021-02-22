@@ -1,0 +1,26 @@
+{
+  "name": "practical_exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab3.uit.navercorp.com/osydoo/practical_exam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp.spritesmith": "^6.11.0",
+    "vinyl-buffer": "^1.0.1"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}

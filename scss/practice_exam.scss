@@ -1,0 +1,25 @@
+@import 'sprite';
+
+.naver_icon {
+    @include sprite($img1);
+    display: inline-block;
+}
+
+.webfiction_icon {
+    @include sprite($img2);
+    display: inline-block;
+}
+
+.horiline_icon {
+    @include sprite($img3);
+    display: inline-block;
+}
+
+.test_wrap {
+    text-align: right;
+
+    .test {
+        font-size: 12px;
+        transform: rotate(45deg);
+    }
+}
