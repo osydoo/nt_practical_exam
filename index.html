@@ -1,21 +1,419 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/practice_exam.css">
     <title>
-        메인 : 푸드위드
+        네이버 웹소설
     </title>
 </head>
+
 <body>
-    <div class="wrap">
-        <div class="test">
-            Test
-            <i class="naver_icon"></i>
-            <i class="webfiction_icon"></i>
-            <i class="horiline_icon"></i>
-        </div>
+    <div class="skip_nav">
+        <a href="#content">본문 바로가기</a>
     </div>
+    <div class="wrap">
+        <header class="main_head">
+            <h1 class="naver_head">
+                <a href="#" class="naver_icon">
+                    <span class="blind">네이버 로고</span>
+                </a>
+                <a href="#" class="webfiction_icon">
+                    <span class="blind">웹 소설</span>
+                </a>
+                <a href="#" class="webtoon_icon">
+                </a>
+            </h1>
+            <a class="userinfo_icon"></a>
+            <a class="search_icon"></a>
+        </header>
+        <div id="content" class="container">
+            <ul class="main_tab">
+                <li>
+                    <!-- [D] 작동하고 있는 버튼의 class에 active를 추가해주세요. -->
+                    <button type="button" class="tab_button">
+                        홈
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="tab_button active">
+                        오늘의웹소설
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="tab_button">
+                        베스트리그
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="tab_button">
+                        챌린지리그
+                    </button>
+                </li>
+            </ul>
+            <button type="button" class="banner">
+                <img src="./images/banner.jpg" alt="후보작투표" width="320" height="156">
+            </button>
+            <div class="rank_box">
+                <button type="button" id="rank_close" class="rank_banner">
+                    <span class="rank_realtime">실시간</span>
+                    <span class="rank_open"><span class="blind">검색수 열기</span></span>
+                    <span class="rank_num_up"><span class="blind">검색수 상승</span>29</span>
+                    <div class="rank_three">일이삼사오육칠팔구십일이삼사오육칠팔</div>
+                </button>
+                <button type="button" id="rank_open" class="rank_banner">
+                    <span class="rank_realtime">실시간 순위</span>
+                    <span class="rank_close"><span class="blind">랭킹 닫기</span></span>
+                </button>
+                <ul id="rank_list" class="rank_list">
+                    <li>
+                        <span class="rank_num_up"><span class="blind">검색수 상승</span>78</span>
+                        <div class="rank_one">뱀파이어와의 비밀연애</div>
+                    </li>
+                    <li>
+                        <span class="rank_num_up"><span class="blind">검색수 상승</span>66</span>
+                        <div class="rank_two">[r.p] happiness 티아라쓴 개망나니</div>
+                    </li>
+                    <li>
+                        <span class="rank_num_up"><span class="blind">검색수 하락</span>29</span>
+                        <div class="rank_three">일이삼사오육칠팔구십일이삼사오육칠팔</div>
+                    </li>
+                    <li>
+                        <span class="rank_num_maintain"><span class="blind">검색수 유지</span>0</span>
+                        <div class="rank_four">[r.p] happiness 티아라쓴 개망나니</div>
+                    </li>
+                    <li>
+                        <span class="rank_num_down"><span class="blind">검색수 하락</span>81</span>
+                        <div class="rank_five">짝사랑 연대기 (over10 year)</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="fiction_list">
+                <div class="tab_box">
+                    <ul class="fiction_tab">
+                        <li class="active">
+                            랜덤
+                        </li>
+                        <li>
+                            업데이트순
+                        </li>
+                        <li>
+                            조회순
+                        </li>
+                        <li>
+                            관심순
+                        </li>
+                    </ul>
+                </div>
+                <div style="margin: auto">
+                <ul class="fiction_vote">
+                    <li>
+                        <a href="#" class="vote_lucky_link">
+                            <img src="images/lucky_pick.jpg" alt="럭키 픽" class="lucky_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">[R.P] happiness 티아라쓴 공주</strong>
+                            <div class="sub_info">
+                                <div class="author_name">일이삼사오육칠팔구십십일십이</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">일이삼사오육칠팔구십십일십이일이삼사오육칠팔구십십일십이일이삼사오육칠팔구십십일십이일이삼사오육칠팔구십십일십이</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list1" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">S&F판타지</span>
+                            <strong class="fiction_name">황태자의 책사 시엘</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 27회</div>
+                            </div>
+                            <p class="fiction_intro">가정학대를 넘어 폭력을 받아온 비운의 아이 민아라면 어떻게 행동을 했을까... 이를 풀어보고자한다</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list2" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list3" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list4" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list5" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list6" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list7" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list8" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list9" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list10" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list11" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list12" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vote_link">
+                            <div class="classification_img">
+                                <img src="images/thumb.png" alt class="thumb_img">
+                            </div>
+                            <span class="fiction_classification">로맨스</span>
+                            <strong class="fiction_name">연못에 핀 목화 - 송경별곡 - 저를 놓지 마십시오.(” 꿈결 같은 시간이 흐르고 ")</strong>
+                            <div class="sub_info">
+                                <div class="author_name">달의 루나</div>
+                                <div class="vote_count"><span class="blind">투표수</span>총 127회</div>
+                            </div>
+                            <p class="fiction_intro">“우리의 다음 생은 없습니다.” 떨치고자 하나 떨칠 수 없고, 벗어나려 해도 벗어날 수 없으니. 이는 붉은 실의
+                                연(緣)이라. 얽히고설킨 붉은 실타래야 어서 내게로 흘러들어라, 나의 고운 임에게로 흘러들어라. 그리하여 우리가 닿을 수 있나니……. 고려에서 태어나 조선에서
+                                살아가야 했던 이들의 잊혔던 옛이야기가 시작된다.</p>
+                        </a>
+                        <a href="#" class="vote_btn_link">
+                            <button type="button" id="list13" class="vote_btn">투표하기</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="foot_box">
+                <a href="" class="top_nav"><span class="blind">최상단으로</span>TOP</a>
+                <a href="#" class="notice_link">베스트리그 1차 승격작이 선정되었습니다. 메일을 확인해주세요</a>
+            </div>
+        </div>
+        <footer class="webfiction_footer">
+            <strong class="copyright">&#169; NAVER WEBTOON CORP</strong>
+        </footer>
+    </div>
+    <div class="popup">
+        <div class="popup_wrap">
+            <div class="popup_inner">
+                <form>
+                    <div class="popup_layer">
+                        <button id="close_layer" type="button" class="close_layer"><span class="blind">레이어 닫기</span><span
+                                class="close_layer_img"></span></button>
+                        <strong class="layer_head">고객정보</strong>
+                        <p class="layer_sub">이벤트 참가를 위해 고객정보를 취합하고 있습니다.<br>관련 정보를 정확하게 입력 바랍니다.</p>
+                        <div class="input_box">
+                            <label for="customer_name" class="input_label">성명</label>
+                            <input type="text" id="customer_name" class="layer_input" placeholder="YOGADANU">
+                        </div>
+                        <div class="input_box">
+                            <label for="customer_email" class="input_label">이메일주소</label>
+                            <input type="text" id="customer_email" class="layer_input"
+                                placeholder="seokirman@naver.com">
+                        </div>
+                        <div class="input_box">
+                            <label for="customer_phone" class="input_label">전화번호</label>
+                            <input type="text" id="customer_phone" class="layer_input" placeholder="01023332333">
+                        </div>
+                        <div class="input_box">
+                            <label for="customer_address" class="input_label">주소</label>
+                            <input type="text" id="customer_address" class="layer_input" placeholder="경기도 성남시 분당구">
+                        </div>
+                        <div class="checkbox_box">
+                            <input id="webtoon_notice" type="checkbox" class="customer_checkbox">
+                            <label for="webtoon_notice" class="customer_notice">네이버 웹툰에 고객정보를 제공함을 <span
+                                    class="customer_agree">동의함</span></label>
+                        </div>
+                        <div class="input_box">
+                            <input id="personal_info" type="checkbox" class="customer_checkbox">
+                            <label for="personal_info" class="customer_notice">수집된 정보는 고객 문의 응대를 위해 3개월간 보관 후 파기되는 것에 대해
+                                동의합니다.</label>
+                        </div>
+                        <a href="#"><button type="submit" class="customer_submit">입력</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup_dimmed"></div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

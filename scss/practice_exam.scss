@@ -1,25 +1,825 @@
+@charset "UTF-8";
 @import 'sprite';
 
-.naver_icon {
-    @include sprite($img1);
+@mixin ellipsis-text {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 100%;
+}
+
+@mixin ellipsis-text-multi($num) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}
+
+@mixin clear-float {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+body, h1, h2, h3, h4, h5, h6, ul, ol, dl, dd, p {
+	margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+.blind, .skip_nav{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+}
+
+.wrap {
+    min-width: 320px;
+}
+
+.main_head {
+    height: 47px;
+    border-bottom: 1px solid #eee;
+    &::after {
+        @include clear-float;
+    }
+}
+
+.naver_head {
     display: inline-block;
+}
+
+.naver_icon {
+    background: url('../img/sprite.png') no-repeat 0 0;
+    background-size: 104px 90px;
+    width: 48px;
+    height: 47px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .webfiction_icon {
-    @include sprite($img2);
+    background: url('../img/sprite.png') no-repeat -49px 0;
+    background-size: 104px 90px;
+    width: 56px;
+    height: 21px;
     display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    position: relative;
+
+    &:after {
+        content: '';
+        background: url('../img/sprite.png') no-repeat -99px -21px;
+        background-size: 104px 90px;
+        width: 1px;
+        height: 14px;
+        display: inline-block;
+        position: absolute;
+        right: -15px;
+        top: 3px;
+    }
 }
 
-.horiline_icon {
-    @include sprite($img3);
+.webtoon_icon {
+    background: url('../img/sprite.png') no-repeat 0 -48px;
+    background-size: 104px 90px;
+    width: 32px;
+    height: 18px;
     display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
 }
 
-.test_wrap {
-    text-align: right;
+.search_icon {
+    background: url('../img/sprite.png') no-repeat -36px -65px;
+    background-size: 104px 90px;
+    width: 18px;
+    height: 18px;
+    display: block;
+    float: right;
+    margin: 15px 15px;
+}
 
-    .test {
+.userinfo_icon {
+    background: url('../img/sprite.png') no-repeat -33px -48px;
+    background-size: 104px 90px;
+    width: 28px;
+    height: 15px;
+    display: block;
+    float: right;
+    margin: 16px 16px 16px 8px;
+}
+
+.main_tab {
+    display: table;
+    width: 100%;
+    li {
+        display: table-cell;
+    }
+    li + li .tab_button {
+        margin-left: -1px;
+    }
+}
+
+.tab_button {
+    background-color: #fff;
+    border: 0;
+    margin: 0 15px;
+    line-height: 45px;
+    font-size: 13px;
+    color: #242424;
+    cursor: pointer;
+    font-weight: bold;
+
+    &.active {
+        border-bottom: 2px solid #28BEF9;
+        color: #28BEF9;
+    }
+}
+
+.banner {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background-color: #27203a;
+    vertical-align: top;
+    img {
+        margin: 0 auto;
+    }
+}
+
+.rank_box {
+    padding: 0 9px;
+}
+
+.rank_banner {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    line-height: 47px;
+    padding: 0;
+    background-color: #fff;
+    text-align: initial;
+    vertical-align: top;
+    &::after {
+        @include clear-float;
+    }
+}
+
+.rank_realtime {
+    font-size: 13px;
+    color: #000;
+    font-weight: bold;
+    float: left;
+    padding: 0 30px 0 0;
+}
+
+.rank_one {
+    font-size: 14px;
+    color: #333;
+    @include ellipsis-text;
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat -70px -65px;
+        background-size: 104px 90px;
+        width: 6px;
+        height: 12px;
+        margin: 0 7px 0 7px;
+    }
+}
+
+.rank_two {
+    font-size: 14px;
+    color: #333;
+    @include ellipsis-text;
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat -61px -47px;
+        background-size: 104px 90px;
+        width: 10px;
+        height: 12px;
+        margin: 0 5px 0;
+    }
+}
+
+.rank_three {
+    font-size: 14px;
+    color: #333;
+    @include ellipsis-text;
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat -71px -47px;
+        background-size: 104px 90px;
+        width: 10px;
+        height: 12px;
+        margin: 0 5px 0;
+    }
+}
+
+.rank_four {
+    font-size: 14px;
+    color: #333;
+    @include ellipsis-text;
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat -81px -47px;
+        background-size: 104px 90px;
+        width: 10px;
+        height: 12px;
+        margin: 0 5px 0;
+    }
+}
+
+.rank_five {
+    font-size: 14px;
+    color: #333;
+    @include ellipsis-text;
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat -91px -47px;
+        background-size: 104px 90px;
+        width: 10px;
+        height: 12px;
+        margin: 0 5px 0;
+    }
+}
+
+.rank_num_up {
+    font-size: 13px;
+    color: #888;
+    float: right;
+    margin-left: 20px;
+    width: 25px;
+    position: relative;
+    text-align: center;
+    &::before {
+        background: url('../img/sprite.png') no-repeat -76px -65px;
+        background-size: 104px 90px;
+        width: 8px;
+        height: 8px;
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        position: absolute;
+        left: -15px;
+        top: 19px;
+    }
+}
+
+.rank_num_maintain {
+    font-size: 13px;
+    color: #888;
+    float: right;
+    margin-left: 20px;
+    width: 25px;
+    position: relative;
+    text-align: center;
+    &::before {
+        background: url('../img/sprite.png') no-repeat -49px -46px;
+        background-size: 104px 90px;
+        width: 8px;
+        height: 1px;
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        position: absolute;
+        left: -15px;
+        top: 22px;
+    }
+}
+
+.rank_num_down {
+    font-size: 13px;
+    color: #888;
+    float: right;
+    margin-left: 20px;
+    width: 25px;
+    position: relative;
+    text-align: center;
+    &::before {
+        background: url('../img/sprite.png') no-repeat -84px -65px;
+        background-size: 104px 90px;
+        width: 8px;
+        height: 8px;
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        position: absolute;
+        left: -15px;
+        top: 19px;
+    }
+}
+
+.rank_open {
+    background: url('../img/sprite.png') no-repeat -87px -39px;
+    background-size: 104px 90px;
+    width: 14px;
+    height: 7px;
+    float: right;
+    margin: 19px 0 0 15px;
+}
+
+.rank_close {
+    background: url('../img/sprite.png') no-repeat -73px -39px;
+    background-size: 104px 90px;
+    width: 14px;
+    height: 7px;
+    float: right;
+    margin: 19px 0 0 15px;
+}
+
+.rank_list {
+    margin: auto;
+    li {
+        border-top: 1px solid #eee;
+        line-height: 47px;
+    }
+}
+
+.fiction_list {
+    background-color: #f4f4f4;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 0 9px 10px;
+}
+
+.tab_box {
+    &::after {
+        @include clear-float;
+    }
+}
+
+.fiction_tab {
+    line-height: 40px;
+    float: right;
+    &::after {
+        @include clear-float;
+    }
+    li {
         font-size: 12px;
-        transform: rotate(45deg);
+        color: #666;
+        float: left;
+        margin-left: 20px;
+        position: relative;
+    }
+    li + li {
+        &::before {
+            content: '';
+            background: url('../img/sprite.png') no-repeat -100px -21px;
+            background-size: 104px 90px;
+            width: 2px;
+            height: 2px;
+            position: absolute;
+            top: 18px;
+            left: -10px;
+        }
+    }
+    .active {
+        font-weight: bold;
+        color: #000;
+        &::before {
+            content: '';
+            background: url('../img/sprite.png') no-repeat -92px -65px;
+            background-size: 104px 90px;
+            width: 8px;
+            height: 7px;
+            position: absolute;
+            top: 15px;
+            left: -10px;
+        }
+    }
+}
+
+.fiction_vote {
+    &::after {
+        @include clear-float;
+    }
+
+    li {
+        float: left;
+        margin: 4px 2px 0;
+        border: 1px solid #dcdcdc;
+    }
+}
+
+.vote_lucky_link {
+    width: 145px;
+    height: 185px;
+    display: block;
+}
+
+.vote_link {
+    display: block;
+    width: 125px;
+    height: 131px;
+    padding: 10px 10px 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.vote_btn_link {
+    display: block;
+    background-color: #fff;
+    padding: 0 10px 10px;
+}
+
+.lucky_img {
+    width: 100%;
+}
+
+.thumb_img {
+    width: 25px;
+    height: 25px;
+}
+
+.classification_img {
+    display: inline-block;
+    border-radius: 100px 100px;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+     &::after {
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         right: 0;
+         left: 0;
+         border: 1px solid rgba(0, 0, 0, 0.1);
+         border-radius: 100px 100px;
+         content: '';
+     }
+}
+
+.fiction_classification {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 11px;
+    color: #666;
+}
+
+.fiction_name {
+    display: block;
+    @include ellipsis-text-multi(2);
+    max-height: 30px;
+    font-size: 12px;
+    color: #000;
+    margin-top: 10px;
+}
+
+.sub_info {
+    line-height: 15px;
+    font-size: 11px;
+    color: #888;
+    margin-top: 3px;
+    &::after {
+        @include clear-float;
+    }
+}
+
+.vote_count {
+    float:left;
+    margin-left: 7px;
+}
+
+.author_name {
+    @include ellipsis-text;
+    float: left;
+    max-width: 80px;
+}
+
+.fiction_intro {
+    font-size: 12px;
+    @include ellipsis-text-multi(2);
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    right: 10px;
+}
+
+.vote_btn {
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #28BEF9;
+    color: #28BEF9;
+    background-color: #fff;
+    width: 100%;
+    line-height: 25px;
+    margin-top: 5px;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat 0 -83px;
+        background-size: 104px 90px;
+        width: 8px;
+        height: 7px;
+        margin-right: 3px;
+    }
+
+    &.fin {
+        font-weight: bold;
+        border: 1px solid #dcdcdc;
+        color: #999;
+        cursor: none;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.foot_box {
+    border-bottom: 1px solid #e1e1e1;
+    line-height: 47px;
+    &::after {
+        @include clear-float;
+    }
+}
+
+.top_nav {
+    line-height: 47px;
+    width: 47px;
+    font-size: 10px;
+    border-left: 1px solid #e1e1e1;
+    float: right;
+}
+
+.notice_link {
+    padding-left: 10px;
+    display: block;
+    line-height: 47px;
+    @include ellipsis-text;
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat -73px -21px;
+        background-size: 104px 90px;
+        width: 26px;
+        height: 18px;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+}
+
+.top_nav {
+    font-size: 10px;
+    color: #000;
+    text-align: center;
+    line-height: 10px;
+    padding-bottom :14px;
+    &::before {
+        display: block;
+        background: url('../img/sprite.png') no-repeat -76px -73px;
+        background-size: 104px 90px;
+        width: 8px;
+        height: 8px;
+        content: '';
+        margin: 15px auto 0;
+    }
+}
+
+.webfiction_footer {
+    background-color: #eee;
+    height : 100px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #000;
+    line-height: 100px;
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    text-align: center;
+
+    &::after {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+}
+
+.popup_wrap {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.popup_inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.popup_dimmed {
+    position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	opacity: 0.7;
+}
+
+.popup_layer {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 300px;
+	min-height: 150px;
+	padding: 30px 15px 20px;
+	background: url("../images/layer_bg.jpg");
+    z-index: 10;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.close_layer {
+    position: absolute;
+    border: 0;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.close_layer_img {
+    background: url('../img/sprite.png') no-repeat -54px -65px;
+    background-size: 104px 90px;
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.layer_head {
+    font-size: 33px;
+    color: #2f2f2f;
+    font-weight: normal;
+}
+
+.layer_sub {
+    text-align: center;
+    font-size: 11px;
+    color: #2f2f2f;
+    margin-top: 10px;
+}
+
+.input_box {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.input_label {
+    font-size: 13px;
+    color: #2f2f2f;
+}
+
+.layer_input {
+    width: 100%;
+    line-height: 20px;
+    font-size: 13px;
+    color: #bbb;
+    border-radius: 100px 100px;
+    border: 1px solid #b4b4b4;
+    padding: 5px 20px;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: none;
+        border: 1px solid #848484;
+    }
+
+    &::-webkit-input-placeholder {
+        font-size: 13px;
+        color: #bbb;
+    }
+
+    &::-moz-placeholder {
+        font-size: 13px;
+        color: #bbb;
+    }
+
+    &:-ms-input-placeholder {
+        font-size: 13px;
+        color: #bbb;
+    }
+
+    &:-moz-placeholder {
+        font-size: 13px;
+        color: #bbb;
+    }
+}
+
+.customer_checkbox {
+    position: absolute;
+    overflow:hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    opacity: 0;
+
+    & + label::before{
+        display: inline-block;
+        background: url('../img/sprite.png') no-repeat 0 -65px;
+        background-size: 104px 90px;
+        width: 18px;
+        height: 19px;
+        vertical-align: top;
+        content:'';
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    &:checked + label::before{
+        background-position: -18px -65px;
+    }
+}
+
+.checkbox_box {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.customer_notice {
+    display: inline-block;
+    color: #848484;
+    text-indent: -25px;
+    padding-left: 25px;
+    font-size: 11px;
+}
+
+.customer_submit {
+    border-radius: 100px 100px;
+    background-color: #2f2f2f;
+    color: #f4f4f4;
+    width: 50%;
+    line-height: 40px;
+    margin-top: 20px;
+    border: 0;
+}
+
+@media screen and (min-width: 768px){
+    .rank_banner {
+        display: block;
+        max-width: 922px;
+        margin: 0 auto;
+    }
+
+    .rank_list {
+        max-width: 922px;
+        &::after {
+            @include clear-float;
+        }
+         li {
+             width: 50%;
+             float: left;
+         }
+    }
+
+    .tab_box {
+        max-width: 922px;
+        margin: auto;
+    }
+
+    .fiction_vote {
+        max-width: 922px;
+        margin: 0 auto;
     }
 }
